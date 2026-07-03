@@ -6,7 +6,7 @@ from persistence import (
     get_student_entries, save_entry_response, get_entry_response,
     update_student, add_resource, get_student_resources, delete_resource
 )
-from pdf_export import generate_pdf
+# PDF export coming soon
 
 st.set_page_config(
     page_title="Career Field Notes",
@@ -272,28 +272,13 @@ def show_notebook():
                     st.write(answer)
                     st.write("")
 
-    # PDF export
+    # PDF export coming soon
     st.write("---")
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        if st.button("📥 Download as PDF", use_container_width=True, type="primary"):
-            try:
-                pdf_bytes = generate_pdf(student, entries)
-                st.download_button(
-                    label="Get Your Field Notes PDF",
-                    data=pdf_bytes,
-                    file_name=f"FieldNotes_{student.display_name}_{datetime.now().strftime('%Y%m%d')}.pdf",
-                    mime="application/pdf"
-                )
-                st.success("PDF ready to download!")
-            except Exception as e:
-                st.error(f"Oops: {e}")
-    
-    with col2:
-        if st.button("← Back", use_container_width=True):
-            st.session_state.page = "home"
-            st.rerun()
+    st.info("📥 PDF export coming soon!")
+
+    if st.button("← Back", use_container_width=True):
+        st.session_state.page = "home"
+        st.rerun()
 
 def show_finds():
     """My Finds: resources, links, inspiration board."""
