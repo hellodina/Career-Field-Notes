@@ -41,7 +41,7 @@ def generate_pdf(student, entries):
     story.append(Paragraph("Career Field Notes", title_style))
     story.append(Spacer(1, 0.2*inch))
     story.append(Paragraph(f"<b>{student.display_name}</b>", heading_style))
-    story.append(Paragraph(f"Class: {student.class_code}", normal_style))
+    story.append(Paragraph(f"Internship: {student.internship_date}", normal_style))
     story.append(Paragraph(f"Generated: {datetime.now().strftime('%B %d, %Y')}", normal_style))
     story.append(Spacer(1, 0.3*inch))
     
