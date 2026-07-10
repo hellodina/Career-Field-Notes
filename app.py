@@ -163,7 +163,7 @@ def show_home():
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         if st.button("ℹ️ Help", use_container_width=True):
-            st.info("**The Vibe:** Explore a career you're curious about through 6 guided entries. Each one unlocks when you finish the last. Honest reflections only.")
+            st.info("Your honest take helps us build better.")
     with col2:
         if st.button("📓 My Notebook", use_container_width=True):
             st.session_state.page = "notebook"
