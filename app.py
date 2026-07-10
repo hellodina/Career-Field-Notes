@@ -200,8 +200,19 @@ def show_entry():
     responses = {}
     for i, prompt in enumerate(entry_template['prompts']):
         value = existing_fields.get(prompt, "")
-        st.markdown(f"**{i+1}. {prompt}**")
-        responses[prompt] = st.text_area("", value=value, height=80, key=f"prompt_{i}", label_visibility="collapsed")
+
+        # Special rendering for quest selection prompt (Entry 1)
+        if entry_num == 1 and "Take one quest" in prompt:
+            st.markdown(f"**{i+1}. {prompt}**")
+            st.markdown("""
+- **[Career Safari](https://discover.hopestreetgroup.org/student-quest/career-safari?launchId=506)** — explore a specific career up close.
+- **[Find Your Fit](https://discover.hopestreetgroup.org/student-quest/interest-inventory?launchId=507)** — discover careers that match your vibe and what you're into.
+- **[Building Next Steps](https://discover.hopestreetgroup.org/student-quest/academic-planning?launchId=505)** — map your academics and post-high-school plan.
+            """)
+            responses[prompt] = st.text_input("Which quest did you pick?", value=value, key=f"prompt_{i}")
+        else:
+            st.markdown(f"**{i+1}. {prompt}**")
+            responses[prompt] = st.text_area("", value=value, height=80, key=f"prompt_{i}", label_visibility="collapsed")
 
     st.write("")
     col1, col2, col3 = st.columns(3)
