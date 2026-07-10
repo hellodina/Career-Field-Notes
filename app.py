@@ -135,23 +135,18 @@ def show_home():
     for entry_num in range(1, 7):
         entry_template = ENTRIES[entry_num]
         status = get_entry_status(student.id, entry_num)
-        locked = entry_num > 1 and get_entry_status(student.id, entry_num - 1) != "done"
 
         col1, col2 = st.columns([0.85, 0.15])
 
         with col1:
-            if locked:
-                st.write(f"🔒 **Entry {entry_num}: {entry_template['title']}**")
-                st.caption(f"Finish Entry {entry_num - 1} first")
-            else:
-                if st.button(
-                    f"📖 **{entry_template['title']}** — {entry_template['subtitle']}",
-                    use_container_width=True,
-                    key=f"btn_entry_{entry_num}"
-                ):
-                    st.session_state.current_entry = entry_num
-                    st.session_state.page = "entry"
-                    st.rerun()
+            if st.button(
+                f"📖 **{entry_template['title']}** — {entry_template['subtitle']}",
+                use_container_width=True,
+                key=f"btn_entry_{entry_num}"
+            ):
+                st.session_state.current_entry = entry_num
+                st.session_state.page = "entry"
+                st.rerun()
 
         with col2:
             if status == "done":
@@ -163,7 +158,7 @@ def show_home():
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         if st.button("ℹ️ Help", use_container_width=True):
-            st.info("Your honest take helps us build better.")
+            st.info("Explore a career you're curious about through 6 guided entries. Each one unlocks when you finish the last. Your honest take helps us build better.")
     with col2:
         if st.button("📓 My Notebook", use_container_width=True):
             st.session_state.page = "notebook"
@@ -229,13 +224,18 @@ def show_entry():
 
     with col3:
         if st.button("✨ Done With This", use_container_width=True, type="primary"):
-            save_entry_response(student.id, entry_num, responses, "done")
-            st.success("Entry complete! Next one is unlocked. 🎉")
-            st.balloons()
-            import time
-            time.sleep(1.5)
-            st.session_state.page = "home"
-            st.rerun()
+            filled = sum(1 for r in responses.values() if r.strip())
+            required = max(1, len(responses) // 3)
+            if filled >= required:
+                save_entry_response(student.id, entry_num, responses, "done")
+                st.success("Entry complete! 🎉")
+                st.balloons()
+                import time
+                time.sleep(1.5)
+                st.session_state.page = "home"
+                st.rerun()
+            else:
+                st.error(f"Please fill in at least {required} prompts ({filled}/{required} done)")
 
 def show_notebook():
     """Notebook: all entries + before/after + PDF export."""
