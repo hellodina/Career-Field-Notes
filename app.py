@@ -200,7 +200,8 @@ def show_entry():
     responses = {}
     for i, prompt in enumerate(entry_template['prompts']):
         value = existing_fields.get(prompt, "")
-        responses[prompt] = st.text_area(prompt, value=value, height=80, key=f"prompt_{i}")
+        st.markdown(f"**{i+1}. {prompt}**")
+        responses[prompt] = st.text_area("", value=value, height=80, key=f"prompt_{i}", label_visibility="collapsed")
 
     st.write("")
     col1, col2, col3 = st.columns(3)

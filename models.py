@@ -28,7 +28,7 @@ ENTRIES = {
         "prompts": [
             "A career, job, or major you're low-key curious about",
             "Why it caught your eye",
-            "Take one quest, your pick (Career Safari, Find Your Fit, or Building Next Steps)",
+            "Take one quest, your pick: [Career Safari](https://discover.hopestreetgroup.org/student-quest/career-safari?launchId=506) • [Find Your Fit](https://discover.hopestreetgroup.org/student-quest/interest-inventory?launchId=507) • [Building Next Steps](https://discover.hopestreetgroup.org/student-quest/academic-planning?launchId=505)",
             "The coolest or most surprising thing you learned",
             "One 'huh, I didn't know that' moment",
             "Did it change how you see this path?",
