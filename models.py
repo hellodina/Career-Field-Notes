@@ -23,83 +23,94 @@ class EntryResponse:
 ENTRIES = {
     1: {
         "title": "First Contact",
-        "subtitle": "Career Safari",
-        "activity": "Name a career, run Career Safari quest (external link)",
+        "subtitle": "Pick a quest",
+        "activity": "About 20 to 30 minutes. Do it on your own, bring it to your 1:1. You're doing two things: chasing a career you're curious about, and helping us make Hope Street better.",
         "prompts": [
-            "A career you are curious about",
+            "A career, job, or major you're low-key curious about",
             "Why it caught your eye",
-            "Most surprising thing learned",
+            "Take one quest, your pick (Career Safari, Find Your Fit, or Building Next Steps)",
+            "The coolest or most surprising thing you learned",
             "One 'huh, I didn't know that' moment",
             "Did it change how you see this path?",
-            "Real talk: What felt helpful/fun? What was confusing? One thing to change?",
+            "What felt helpful or fun?",
+            "What was confusing, slow, or off?",
+            "One thing you'd change or add",
             "One small thing you want to explore next"
         ]
     },
     2: {
         "title": "Down the Rabbit Hole",
-        "subtitle": "Off Platform",
-        "activity": "Watch 2-3 'day in the life' videos, listen to podcast, or read article/blog post",
+        "subtitle": "Watch, listen, read",
+        "activity": "The best way to learn what a job is really like is to go see it. No quest this week, just you and the internet. Watch, listen, read, follow your curiosity.",
         "prompts": [
-            "Most surprising thing I found",
-            "One person/channel/account worth following (with link)",
-            "Something that made this field more exciting",
+            "Watch two or three 'day in the life' videos for your field",
+            "Listen to a podcast episode with someone who does this work",
+            "Read an article, a thread, or a blog post from inside the field",
+            "The most surprising thing I found",
+            "One person, channel, or account worth following",
+            "Something that made this field more exciting to me",
             "Something that gave me pause",
             "Am I more or less into this than last week, and why?",
-            "One question this raised"
+            "One question this raised that you want to answer"
         ]
     },
     3: {
         "title": "Talk to a Real Human",
-        "subtitle": "Mentorship",
-        "activity": "Message one professional/college student/mentor with questions",
+        "subtitle": "Reach out to one person",
+        "activity": "Nothing beats hearing it straight from someone living it. Reach out to one real person and ask about their path. Your mentor can help you find someone.",
         "prompts": [
+            "Find one person in or near your field",
+            "Reach out, short and kind: who you are, why you're curious, two or three questions",
             "Who I talked to (name or role)",
-            "Questions I asked",
-            "Best thing they said",
-            "One myth busted or surprise",
-            "One piece of advice to remember",
-            "Thank-you note sent (yes/no)",
-            "One thing I will do because of this chat"
+            "The questions I asked",
+            "The best thing they said",
+            "One myth this busted, or something that surprised me",
+            "One piece of advice I want to remember",
+            "Thank-you note sent (always)",
+            "One thing you'll do because of this chat"
         ]
     },
     4: {
         "title": "Map the Route",
-        "subtitle": "Research",
-        "activity": "Research the path and sketch out what it takes",
+        "subtitle": "What's the road there?",
+        "activity": "Now you know the destination. What's the road there? Part detective, part planner: figure out what it takes, and sketch your route.",
         "prompts": [
-            "Education/training it usually takes",
-            "Skills that matter most, which I already have",
-            "What a first job/entry point looks like",
-            "Rough pay range",
-            "One or two real programs/schools/paths I found",
-            "My route: Now / Next (this year) / Later",
-            "One senior-year move I can make toward this"
+            "The education or training it usually takes",
+            "The skills that matter most, and which ones you already have",
+            "What a first job or entry point looks like",
+            "A rough sense of the pay range",
+            "One or two real programs, schools, or paths you found",
+            "Now (sketch your route)",
+            "Next (this year)",
+            "Later",
+            "One senior-year move you can make toward this"
         ]
     },
     5: {
         "title": "Make Something Real",
-        "subtitle": "Creation",
-        "activity": "Create one artifact (choose: resume bullet, portfolio piece, outreach message, mock project, mood board, or your own idea)",
+        "subtitle": "Turn your exploration into one real artifact",
+        "activity": "Explorers make things. Turn your exploration into one real artifact you could actually show someone. Great to build during an AI Maker session.",
         "prompts": [
-            "What I am making",
-            "Upload or link to what I made",
+            "Pick one (resume bullet, portfolio piece, outreach message, mock project, mood board, or your own idea)",
+            "What I made",
             "Why I chose this",
             "What I'm proud of",
-            "What I'd improve with more time"
+            "What I'd improve with more time",
+            "Show it off (in the cohort channel, to your mentor, or in your Weekly Share)"
         ]
     },
     6: {
         "title": "Your Version 1.0 Plan",
-        "subtitle": "Reflection",
-        "activity": "Write your plan and look back on the journey",
+        "subtitle": "Pull it all together",
+        "activity": "Time to pull it all together. Not a final answer, a Version 1.0, a plan you can keep updating as you grow. Look back at Entry 1 and see how far you've come.",
         "prompts": [
             "The path I'm most curious about right now",
             "Why it fits me (interests, strengths, values)",
-            "My next three steps (this summer, school year, beyond)",
+            "My next three steps (this summer, this school year, beyond)",
             "What I still want to explore",
-            "How did my thinking shift from Entry 1 to now?",
-            "Most useful thing I did during Field Notes",
-            "Closing feedback for us: Where did Career Safari help most? Where should it grow?"
+            "How did my thinking shift from that first quest (Entry 1) to now?",
+            "The most useful thing I did during these Field Notes",
+            "Comparing your first Hope Street quest (Entry 1) to everything since, where did Hope Street help most, and where should it grow?"
         ]
     }
 }
